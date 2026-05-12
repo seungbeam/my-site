@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Embedded Core Technologies</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="canonical" href="https://www.insense.co.kr">
+    <meta property="og:title" content="Embedded Core Innovation">
+    <meta property="og:description" content="R&D and Management Solutions">
+    <meta property="og:image" content="https://www.insense.co.kr/images/main2.jpg">
+  	<meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://www.insense.co.kr">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	
+	<body class="is-preload">
+  
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+        
+				<!-- Header -->
+					<header id="header">
+						<h1>
+              <a href="index.html">
+                <span style="
+                  color:#e63946;
+                  font-family:'Agency FB', sans-serif;
+                  font-style:italic;
+                  font-weight:900;
+                  font-size:36px;
+                  letter-spacing:1px;
+                ">
+                  inSENSE
+                </span>
+              </a>
+            </h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+        
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">HOME</a></li>
+								<li><a href="m-company.html">COMPANY</a></li>
+								<li><a href="i-software.html">SOFTWARE</a></li>
+								<li><a href="i-hardware.html">HARDWARE</a></li>
+								<li><a href="i-mechanical.html">MECHANICAL</a></li>
+								<li><a href="m-project.html">PROJECT</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+          
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>프로젝트</h2>
+								<p><span style="color:#e63946; font-weight:700;">(주)인센스</span>가 수행한 주요 프로젝트를 소개합니다.</p>
+							</div>
+						</header>
+            
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+									<!-- 데이터 로드 컨테이너 -->
+									<div id="project-container"></div>
+									<!-- 페이지네이션 컨테이너 -->
+									<ul class="pagination" id="pagination-list" style="justify-content: center; margin-top: 2em;"></ul>
+								</div>
+							</div>
+					</section>
+        
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Information</h2>
+							<p class="company-info">
+								<span>상호 : (주)인센스</span>
+								<span>대표자 : 정승범</span>
+								<span>사업자등록번호 : 872-88-02129</span>
+								<span class="break"></span>
+								<span>주소 : 경기도 화성시 동탄대로21길 10 1009호(더퍼스트타워)</span>
+								<span>이메일 : mr_ping@naver.com</span>
+							</p>
+							<ul class="copyright">
+								<li>&copy; 2026 EMCONIX Inc. Engineered for Excellence.</li>
+								<li style="font-size: 15px; opacity: 0.5;">
+                  					Design: <a href="https://html5up.net">HTML5 UP</a>
+                				</li>
+							</ul>
+						</div>
+					</section>
+			</div>
+    
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/security.js"></script>
+			
+			<!-- 데이터 파일 로드 (변수명: projects) -->
+			<script src="assets/js/prj-data.js" charset="utf-8"></script>
+			
+			<script>
+				const itemsPerPage = 4;
+				let currentPage = 1;
+        
+				function renderDisplay(page) {
+					const container = document.getElementById('project-container');
+          if(!container || typeof projects === 'undefined') return;
+          container.innerHTML = ""; 
+      
+          const start = (page - 1) * itemsPerPage;
+          const end = start + itemsPerPage;
+          const currentData = projects.slice(start, end);
+      
+          currentData.forEach(item => {
+            if (!item.title || item.title.trim() === "") return;
+            const validFeatures1 = item.features1.filter(f => f && f.trim() !== "");
+            const validFeatures2 = item.features2.filter(f => f && f.trim() !== "");
+            
+            const html = `
+                <section>
+                    <div class="box" style="background-color: #373b4e; color: #ffffff; padding: 0.0em; border-radius: 6px; margin-bottom: 0.75em; display: flex; flex-wrap: wrap; gap: 2em; align-items: center; border: none !important;">
+                        <!-- 이미지 컨테이너: 고정 크기 설정 -->
+                        <div style="flex: 0 0 180px; width: 180px; height: 180px; overflow: hidden; border-radius: 6px; display: flex; align-items: center; justify-content: center; background-color: transparent;">
+                            <img src="${item.img}" style="width: 100%; height: 100%; object-fit: contain; display: block; transform: scale(1.0);" />
+                        </div>
+                        <div style="flex: 2 2 400px;">
+                            <h3 style="color: #ffffff; font-weight: 800; margin-bottom: 0.2em; font-size: 1.5rem;">${item.title}</h3>
+                            <p style="margin-bottom: 0.5em; color: #BDC3C7; font-size: 1.0rem; line-height: 1.25;">${item.desc}</p>
+                              <div class="row">
+                                <div class="col-6 col-12-small">
+                                    <ul style="list-style: none; padding-left: 0; margin-bottom: 0; font-size: 1.0rem;">
+                                        ${validFeatures1.map(f => `<li><span style="color: #55E6C1;">■</span> ${f}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div class="col-6 col-12-small">
+                                    <ul style="list-style: none; padding-left: 0; margin-bottom: 0; font-size: 1.0rem;">
+                                        ${validFeatures2.map(f => `<li><span style="color: #55E6C1;">■</span> ${f}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>`;
+            container.innerHTML += html;
+        });
+          renderPagination();
+				}
+        
+				function renderPagination() {
+					const paginationList = document.getElementById('pagination-list');
+					if(!paginationList) return;
+					paginationList.innerHTML = "";
+					
+					const totalPages = Math.ceil(projects.length / itemsPerPage);
+					// Prev 버튼
+					paginationList.innerHTML += `<li><a href="javascript:void(0)" class="button small ${currentPage === 1 ? 'disabled' : ''}" onclick="changePage(${currentPage - 1})">Prev</a></li>`;
+					// 숫자 버튼
+					for (let i = 1; i <= totalPages; i++) {
+						paginationList.innerHTML += `<li><a href="javascript:void(0)" class="page ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</a></li>`;
+					}
+					// Next 버튼
+					paginationList.innerHTML += `<li><a href="javascript:void(0)" class="button small ${currentPage === totalPages ? 'disabled' : ''}" onclick="changePage(${currentPage + 1})">Next</a></li>`;
+				}
+        
+				function changePage(page) {
+					const totalPages = Math.ceil(projects.length / itemsPerPage);
+					if (page < 1 || page > totalPages) return;
+					currentPage = page;
+					renderDisplay(currentPage);
+					//window.scrollTo({ top: document.getElementById('wrapper').offsetTop, behavior: 'smooth' });
+				}
+
+				window.onload = () => renderDisplay(1);
+			</script>
+	</body>
+</html>
