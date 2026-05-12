@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const footerData = `
     <section id="footer">
       <div class="inner">
-        <h2 class="major">Information</h2>
+        <h2 class="major">INFORMATION</h2>
 
         <p class="company-info">
           <span>상호 : (주)인센스</span>
