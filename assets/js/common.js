@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </p>
 
         <ul class="copyright">
-          <li>&copy; 2024 EMCONIX Inc. Engineered for Excellence.</li>
+          <li>&copy; 2024 inSENSE Inc. Engineered for Excellence.</li>
           <li style="font-size: 15px; opacity: 0.5;">
             Design: <a href="https://html5up.net">HTML5 UP</a>
           </li>
