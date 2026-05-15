@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <span>사업자등록번호 : 872-88-02129</span>
           <span class="break"></span>
           <span>주소 : 경기도 화성시 동탄대로21길 10 1009호(더퍼스트타워)</span>
-          <span>이메일 : mr_ping@naver.com</span>
+          <span>이메일 : sbjeong@insense.co.kr</span>
         </p>
 
         <ul class="copyright">
